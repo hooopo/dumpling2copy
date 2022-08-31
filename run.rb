@@ -7,7 +7,7 @@ require 'pry'
 require 'csv'
 Dotenv.load
 
-clean_cmd = "psql -f clean_all.sql"
+clean_cmd = "psql discourse -f clean_all.sql"
 puts clean_cmd 
 system(clean_cmd)
 
