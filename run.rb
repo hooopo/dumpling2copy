@@ -7,6 +7,10 @@ require 'pry'
 require 'csv'
 Dotenv.load
 
+clean_cmd = "psql -f clean_all.sql"
+puts clean_cmd 
+system(clean_cmd)
+
 skip_list = %w[
   tx
   tx1
