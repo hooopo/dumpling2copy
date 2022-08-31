@@ -21,7 +21,7 @@ Dir.glob("#{csv_dir}/*.csv").each do |file|
     next
   end
   begin 
-    cmd = %Q{psql -c "\\copy #{table_name} FROM '#{file}' WITH HEADER NULL '\N' DELIMITER E',' QUOTE E'\'' ESCAPE E'\\' CSV;"}
+    cmd = %Q{psql -c "\\copy #{table_name} FROM '#{file}' WITH HEADER NULL '\\N' DELIMITER E',' QUOTE E'\\'' ESCAPE E'\\\\' CSV;"}
     puts cmd 
     system(cmd)
   rescue 
