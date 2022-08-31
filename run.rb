@@ -12,7 +12,7 @@ skip_list = %w[
   tx1
 ]
 
-csv_dir = ENV["CSV_DIR"] || "./discourse_csv"
+csv_dir = ENV["CSV_DIR"] || "/shared/log/discourse_csv"
 
 Dir.glob("#{csv_dir}/*.csv").each do |file|
   table_name = File.basename(file).split(".")[1]
