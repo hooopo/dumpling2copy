@@ -26,7 +26,7 @@ Dir.glob("#{csv_dir}/*.csv").each do |file|
   end
   begin 
     cmd = %Q{
-      psql discourse -c "SET session_replication_role = replica;set role to discourse;\\copy #{table_name} FROM '#{file}' WITH HEADER NULL '\\N' DELIMITER E',' QUOTE E'\\'' ESCAPE E'\\\\\\\\' CSV;"
+      psql discourse -c "SET session_replication_role = replica;set role to discourse; \\copy #{table_name} FROM '#{file}' WITH HEADER NULL '\\N' DELIMITER E',' QUOTE E'\\'' ESCAPE E'\\\\\\\\' CSV;"
     }
     puts cmd 
     system(cmd)
