@@ -14,6 +14,15 @@ system(clean_cmd)
 skip_list = %w[
   tx
   tx1
+  one_row_table
+  user_search_data
+  user_options
+  post_search_data
+  post_action_types
+  topic_users
+  user_api_keys
+  category_featured_topics
+  topic_search_data
 ]
 
 csv_dir = ENV["CSV_DIR"] || "/shared/log/discourse_csv"
