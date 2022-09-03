@@ -32,7 +32,7 @@ Dir.glob("#{csv_dir}/*.csv").each do |file|
     next
   end
   begin 
-    column_names = `head -1 #{file}`.strip.gsub("'", '')
+    column_names = `head -1 #{file}`.strip.gsub("'", '\"')
     cmd = %Q{psql discourse -e -c "SET session_replication_role = replica;" -c "set role to discourse;" -c "\\copy #{table_name} (#{column_names}) FROM '#{file}' WITH HEADER NULL '\\N' DELIMITER E',' QUOTE E'\\'' ESCAPE E'\\\\\\\\' CSV;"}
     puts cmd 
     system(cmd)
