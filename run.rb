@@ -19,7 +19,6 @@ skip_list = %w[
   user_search_data
   user_options
   post_search_data
-  post_action_types
   user_api_keys
   topic_search_data
 ]
@@ -78,7 +77,7 @@ Dir.glob("#{csv_dir}/*.000000000.csv").each do |file|
 
       file = file.gsub("000000000", "111111111")
 
-      CSV.open(file, "w", headers: columns, write_headers: true, quote_char: "'", force_quotes: true, write_nil_value: '\N') do |csv_w|
+      CSV.open(file, "w", headers: columns, write_headers: true, quote_char: "'", write_nil_value: '\N') do |csv_w|
         CSV.open(original_file,  headers: true, quote_char: "'", col_sep: ',', liberal_parsing: true).each do |csv_r|
           h = csv_r.to_h 
           h["theme_ids"] = encoder.encode(JSON.parse(h["theme_ids"]))
