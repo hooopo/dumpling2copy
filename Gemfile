@@ -13,3 +13,5 @@ gem "pry", "~> 0.14.1"
 gem "csv", "~> 3.2"
 
 gem "ipaddr", "~> 1.2"
+
+gem "pg", "~> 1.4"

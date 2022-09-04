@@ -6,6 +6,7 @@ GEM
     dotenv (2.8.1)
     ipaddr (1.2.4)
     method_source (1.0.0)
+    pg (1.4.3)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -17,6 +18,7 @@ DEPENDENCIES
   csv (~> 3.2)
   dotenv (~> 2.8)
   ipaddr (~> 1.2)
+  pg (~> 1.4)
   pry (~> 0.14.1)
 
 BUNDLED WITH
