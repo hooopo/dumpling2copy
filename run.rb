@@ -23,7 +23,7 @@ skip_list = %w[
   topic_search_data
 ]
 
-csv_dir = ENV["CSV_DIR"] || "/shared/log/discourse_csv"
+csv_dir = ENV["CSV_DIR"] || "/shared/discourse_csv"
 encoder = PG::TextEncoder::Array.new(name: "text[]", delimiter: ',')
 
 Dir.glob("#{csv_dir}/*.000000000.csv").each do |file|
